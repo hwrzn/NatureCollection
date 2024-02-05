@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+<!-- Base application theme. -->
+<style name="Base.Theme.NatureCollection" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Customize your light theme here. -->
+    <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+</style>
 
-    <style name="Theme.NatureCollection" parent="android:Theme.Material.Light.NoActionBar" />
+<style name="Theme.NatureCollection" parent="Base.Theme.NatureCollection" />
 
     <!-- Create Default Text Style -->
     <style name="DefaultTextStyle">
         <item name="android:textColor">@color/lightGray</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:fontFamily">@font/Kanit</item>
+        <item name="android:fontFamily">@font/kanit</item>
     </style>
 
     <!-- Create Subtitle Text Style -->
