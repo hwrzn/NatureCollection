@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "795652383729",
+    "project_id": "nature-collection-b59ff",
+    "storage_bucket": "nature-collection-b59ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795652383729:android:2d81ab276e8630ec0a9a50",
+        "android_client_info": {
+          "package_name": "fr.hwrzn.naturecollection"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9gjKylP3NSGh1W6DfDwkLL9Gdg5NL3C4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.hwrzn.naturecollection.MainActivity
 import fr.hwrzn.naturecollection.PlantModel
+import fr.hwrzn.naturecollection.PlantRepository
 import fr.hwrzn.naturecollection.R
 
 class PlantAdapter(private val context: MainActivity, private val plantList: List<PlantModel>,private val layoutId: Int) : RecyclerView.Adapter<PlantAdapter.ViewHolder>(){
@@ -28,11 +29,14 @@ class PlantAdapter(private val context: MainActivity, private val plantList: Lis
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = plantList.size //équivaut à {return valeur} en java
+    override fun getItemCount(): Int = plantList.size //en kotlin on peut mettre = lorsqu'il y a qu'une seule instruction
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //récupérer les informatiuons de la plante
         val currentPlant = plantList[position]
+
+        //récupérer le repository
+        val repo = PlantRepository()
 
         //utiliser la dépendance glide pour récupéer l'image à partir de son lien -> composant
         Glide.with(context).load(Uri.parse(currentPlant.imageUrl)).into(holder.plantImage)
@@ -49,6 +53,14 @@ class PlantAdapter(private val context: MainActivity, private val plantList: Lis
         } else {
             holder.starIcon.setImageResource(R.drawable.ic_unstar)
 
+        }
+
+        //rajouter une interaction sur cette étoile
+        holder.starIcon.setOnClickListener {
+            //inverse si le bouton est liké ou non
+            currentPlant.liked = !currentPlant.liked
+            //mettre à jour l'objet plante
+            repo.updatePlant(currentPlant)
         }
 
     }

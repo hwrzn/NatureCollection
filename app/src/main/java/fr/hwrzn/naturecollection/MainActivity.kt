@@ -9,10 +9,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //injection de HomeFragment dans notre FrameLayout (fragment_container)
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, HomeFragment(this))
-        transaction.addToBackStack(null)
-        transaction.commit()
+        //charger notre PlantRepository
+        val repo = PlantRepository()
+
+        repo.updateData{
+            //injection de HomeFragment dans notre FrameLayout (fragment_container)
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, HomeFragment(this))
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+
     }
 }
