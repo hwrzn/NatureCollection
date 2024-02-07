@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
         //injection de HomeFragment dans notre FrameLayout (fragment_container)
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, HomeFragment())
+        transaction.replace(R.id.fragment_container, HomeFragment(this))
         transaction.addToBackStack(null)
         transaction.commit()
     }

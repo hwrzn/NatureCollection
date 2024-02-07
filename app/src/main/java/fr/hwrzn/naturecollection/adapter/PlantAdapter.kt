@@ -1,17 +1,25 @@
 package fr.hwrzn.naturecollection.adapter
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import fr.hwrzn.naturecollection.MainActivity
+import fr.hwrzn.naturecollection.PlantModel
 import fr.hwrzn.naturecollection.R
 
-class PlantAdapter(private val layoutId: Int) : RecyclerView.Adapter<PlantAdapter.ViewHolder>(){
+class PlantAdapter(private val context: MainActivity, private val plantList: List<PlantModel>,private val layoutId: Int) : RecyclerView.Adapter<PlantAdapter.ViewHolder>(){
 
     //boîte pour ranger tout les composants à contrôler
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val plantImage = view.findViewById<ImageView>(R.id.image_item)
+        val plantName:TextView? = view.findViewById<TextView>(R.id.name_item)
+        val plantDescription:TextView? = view.findViewById<TextView>(R.id.description_item)
+        val starIcon = view.findViewById<ImageView>(R.id.star_icon)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,9 +28,28 @@ class PlantAdapter(private val layoutId: Int) : RecyclerView.Adapter<PlantAdapte
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = 5 //équivaut à {return 5} en java
+    override fun getItemCount(): Int = plantList.size //équivaut à {return valeur} en java
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        //récupérer les informatiuons de la plante
+        val currentPlant = plantList[position]
+
+        //utiliser la dépendance glide pour récupéer l'image à partir de son lien -> composant
+        Glide.with(context).load(Uri.parse(currentPlant.imageUrl)).into(holder.plantImage)
+
+        //mettre à jour le nom de la plante
+        holder.plantName?.text = currentPlant.name
+
+        //mettre à jour la description de la plante
+        holder.plantDescription?.text = currentPlant.description
+
+        //vérifier si la plante a été likée
+        if(currentPlant.liked) {
+            holder.starIcon.setImageResource(R.drawable.ic_star)
+        } else {
+            holder.starIcon.setImageResource(R.drawable.ic_unstar)
+
+        }
 
     }
 
