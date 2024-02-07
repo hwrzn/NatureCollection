@@ -10,10 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.hwrzn.naturecollection.MainActivity
 import fr.hwrzn.naturecollection.PlantModel
+import fr.hwrzn.naturecollection.PlantPopup
 import fr.hwrzn.naturecollection.PlantRepository
 import fr.hwrzn.naturecollection.R
 
-class PlantAdapter(private val context: MainActivity, private val plantList: List<PlantModel>,private val layoutId: Int) : RecyclerView.Adapter<PlantAdapter.ViewHolder>(){
+class PlantAdapter(val context: MainActivity, private val plantList: List<PlantModel>, private val layoutId: Int) : RecyclerView.Adapter<PlantAdapter.ViewHolder>(){
 
     //boîte pour ranger tout les composants à contrôler
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -61,6 +62,12 @@ class PlantAdapter(private val context: MainActivity, private val plantList: Lis
             currentPlant.liked = !currentPlant.liked
             //mettre à jour l'objet plante
             repo.updatePlant(currentPlant)
+        }
+
+        //interaction lors du clic sur une plante
+        holder.itemView.setOnClickListener {
+            //afficher la popup
+            PlantPopup(this, currentPlant).show()
         }
 
     }
