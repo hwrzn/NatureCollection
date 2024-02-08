@@ -5,6 +5,11 @@
     <string name="home_page_title">À découvrir</string>
     <string name="home_page_last_plant_section">Dernières plantes</string>
 
+    <!-- NavBar -->
+    <string name="bottom_home_item">Accueil</string>
+    <string name="bottom_collection_item">Collection</string>
+    <string name="bottom_add_plant_item">Ajouter</string>
+
     <!-- CollectionPage -->
     <string name="collection_page_title">Ma collection</string>
 
