@@ -33,13 +33,13 @@ class PlantAdapter(val context: MainActivity, private val plantList: List<PlantM
     override fun getItemCount(): Int = plantList.size //en kotlin on peut mettre = lorsqu'il y a qu'une seule instruction
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //récupérer les informatiuons de la plante
+        //récupérer les informations de la plante
         val currentPlant = plantList[position]
 
         //récupérer le repository
         val repo = PlantRepository()
 
-        //utiliser la dépendance glide pour récupéer l'image à partir de son lien -> composant
+        //utiliser la dépendance glide pour récupérer l'image à partir de son lien -> composant
         Glide.with(context).load(Uri.parse(currentPlant.imageUrl)).into(holder.plantImage)
 
         //mettre à jour le nom de la plante
