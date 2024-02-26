@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import fr.hwrzn.naturecollection.Login
@@ -39,7 +40,10 @@ class AddPlantFragment(private val context: MainActivity) : Fragment() {
 
         //récupérer le bouton confirmer
         val confirmButton = view?.findViewById<AppCompatButton>(R.id.confirm_button)
-        confirmButton?.setOnClickListener { sendForm(view) }
+        confirmButton?.setOnClickListener {
+            sendForm(view)
+            Toast.makeText(context, "Plante ajoutée.", Toast.LENGTH_SHORT,).show()
+        }
 
         return view
     }
