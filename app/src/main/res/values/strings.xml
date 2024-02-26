@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">Nature Collection</string>
 
+    <!-- Login and Register page -->
+    <string name="login">Connexion</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="login_button">Se connecter</string>
+    <string name="registration_text">S\'inscrire</string>
+
+    <string name="register">Inscription</string>
+    <string name="register_button">S\'inscrire</string>
+    <string name="connection_text">Se connecter</string>
+
     <!-- HomePage -->
     <string name="home_page_title">À découvrir</string>
     <string name="home_page_last_plant_section">Dernières plantes</string>
