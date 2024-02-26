@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.Spinner
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
+import fr.hwrzn.naturecollection.Login
 import fr.hwrzn.naturecollection.MainActivity
 import fr.hwrzn.naturecollection.PlantModel
 import fr.hwrzn.naturecollection.PlantRepository

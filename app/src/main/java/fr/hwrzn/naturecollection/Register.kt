@@ -70,13 +70,13 @@ class Register : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(
                             this,
-                            "Registration succeed.",
+                            "Inscription réussie.",
                             Toast.LENGTH_SHORT,
                         ).show()
                     } else {
                         Toast.makeText(
                             this,
-                            "Registration failed.",
+                            "Inscription échouée.",
                             Toast.LENGTH_SHORT,
                         ).show()
                     }

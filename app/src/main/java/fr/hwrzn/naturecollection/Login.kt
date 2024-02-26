@@ -69,7 +69,7 @@ class Login : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Toast.makeText(
                             baseContext,
-                            "Login succeed.",
+                            "Connexion réussie.",
                             Toast.LENGTH_SHORT,
                         ).show()
                         val intent = Intent(this, MainActivity::class.java)
@@ -78,7 +78,7 @@ class Login : AppCompatActivity() {
                     } else {
                         Toast.makeText(
                             baseContext,
-                            "Login failed.",
+                            "Échec de connexion.",
                             Toast.LENGTH_SHORT,
                         ).show()
                     }
