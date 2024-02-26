@@ -54,7 +54,12 @@
         android:text="@string/login_button"
         android:layout_marginTop="@dimen/default_margin"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@color/green"
+        android:padding="10dp"
+        style="@style/TitleTextStyle"
+        android:textSize="18sp"/>
 
     <TextView
         android:textStyle="bold"

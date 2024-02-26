@@ -56,7 +56,7 @@
             android:background="@color/green"
             android:padding="10dp"
             style="@style/TitleTextStyle"
-            android:textSize="18sp"/>
+            android:textSize="14sp"/>
 
     </RelativeLayout>
 
