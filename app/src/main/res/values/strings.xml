@@ -15,6 +15,8 @@
     <!-- HomePage -->
     <string name="home_page_title">À découvrir</string>
     <string name="home_page_last_plant_section">Dernières plantes</string>
+    <string name="email_logged">NatureCollection@gmail.com</string>
+    <string name="logout_button">Se déconnecter</string>
 
     <!-- NavBar -->
     <string name="bottom_home_item">Accueil</string>

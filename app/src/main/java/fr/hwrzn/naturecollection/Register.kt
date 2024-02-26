@@ -19,6 +19,16 @@ class Register : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -29,6 +39,12 @@ class Register : AppCompatActivity() {
         var progressBar : ProgressBar = findViewById(R.id.progressBar)
         var buttonReg : Button = findViewById(R.id.btn_register)
         var textView : TextView = findViewById(R.id.loginNow)
+
+        textView.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         buttonReg.setOnClickListener {
             var email = editTextEmail.text.toString()
@@ -52,25 +68,19 @@ class Register : AppCompatActivity() {
                     progressBar.visibility = View.GONE
 
                     if (task.isSuccessful) {
-
                         Toast.makeText(
                             this,
-                            "Authentication succeed.",
+                            "Registration succeed.",
                             Toast.LENGTH_SHORT,
                         ).show()
                     } else {
-                        // If sign in fails, display a message to the user.
                         Toast.makeText(
                             this,
-                            "Authentication failed.",
+                            "Registration failed.",
                             Toast.LENGTH_SHORT,
                         ).show()
                     }
                 }
-
-        }
-
-        textView.setOnClickListener {
 
         }
 
